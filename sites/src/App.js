@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+//Central hub that decides which page to load.
+import Wiki from './pages/wiki/Wiki.js';
+import Landing from './pages/landing/Landing.js';
+
+import {Routes, Route, Link} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <header>
+        <h2>Jinxy's Sites</h2>
+      </header>          
+      <Routes>
+        <Route path="/Wiki" element={<Wiki />}></Route>
+        <Route path="/JinxSites" element={<Landing />}></Route>
+      </Routes>
+    </>
   );
 }
 
